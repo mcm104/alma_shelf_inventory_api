@@ -1,2 +1,4 @@
 key.php
-cache/*/*
+cache/*/*.csv
+cache/*/*.xlsx
+cache/*/*.xml
