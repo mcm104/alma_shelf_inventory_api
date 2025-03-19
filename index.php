@@ -186,7 +186,7 @@ h2 {
 
     <div class="reformed-form">
       <h1>Inventory Report <small>Fill in form and submit</small></h1>
-    	<form method="post" name="ShelfLister" id="ShelfLister" action="<?php echo 'https://' . $_SERVER['HTTP_HOST'].dirname($_SERVER['PHP_SELF']) . 'process_barcodes.php'; ?>" enctype="multipart/form-data">
+    	<form method="post" name="ShelfLister" id="ShelfLister" action="<?php echo 'https://' . $_SERVER['HTTP_HOST'].dirname($_SERVER['PHP_SELF']) . '/process_barcodes.php'; ?>" enctype="multipart/form-data">
     		<dl>
     			<dt>
     				<label for="flie">Barcode XLSX FIle:</label>
@@ -244,6 +244,19 @@ echo "<option value=$library->code>$library->name</option>";
     			</dt>
     			<dd>
     				<select size="1" name="location" id="location" class="required">
+						<option value="MAIN3">Main Collection - 3rd Floor</option>
+						<option value="MAIN2">Main Collection - 2nd Floor</option>
+						<option value="ARCH">Archives</option>
+						<option value="JUV">Juvenile</option>
+						<option value="VIDEO">Video</option>
+						<option value="CD">Compact Disc</option>
+						<option value="CURR">Curriculum</option>
+						<option value="REF">Reference</option>
+						<option value="FRONTDESK">Front Desk</option>
+						<option value="RESERVE">Course Reserves</option>
+						<option value="POP">Popular Fiction</option>
+						<option value="OVER">Oversized</option>
+						<option value="RR">Ready Reference</option>
     				</select>
     			</dd>
     		</dl>
@@ -253,10 +266,15 @@ echo "<option value=$library->code>$library->name</option>";
     			</dt>
     			<dd>
     				<select size="1" name="itemType" id="itemType" class="required">
-    					<option value="BOOK">Book</option>
-    					<option value="PERIODICAL">Periodical</option>
-              <option value="DVD">DVD</option>
+						<option value="BOOK">Book</option>
+    					<option value="ISSUE">Issue</option>
+						<option value="MICROFILM">Microfilm</option>
+						<option value="SCORE">Music Score</option>
+    					<option value="DVD">DVD/Blu-Ray</option>
+						<option value="SOUND_REC">Sound Recording</option>
     					<option value="THESIS">Thesis</option>
+						<option value="ARCH">Archival Material</option>
+						<option value="OTHER">Other</option>
     				</select>
     			</dd>
     		</dl>
@@ -266,11 +284,15 @@ echo "<option value=$library->code>$library->name</option>";
     			</dt>
     			<dd>
     				<select size="1" name="policy" id="policy" class="required">
-    					<option value="core">Core</option>
-    					<option value="reserve">Reserve</option>
-              <option value="cont lit">Contemporary Lit</option>
-    					<option value="media">Media</option>
-              <option value="juvenile">Juvenile</option>
+						<option value="none">None</option>
+    					<option value="periodical">Periodical, 7 Days</option>
+    					<option value="microfilm">Microfilm, Non-Circulating</option>
+    					<option value="PRINN">Print, Non-Circulating</option>
+						<option value="bookbag">Bookbag, 28 Day</option>
+						<option value="media">Media, 7 Day</option>
+						<option value="reserve1">Reserve, 1 Week</option>
+						<option value="reserve24">Reserve, 24 Hours</option>
+						<option value="reserve4">Reserve, 4 Hours</option>
     				</select>
     			</dd>
     		</dl>

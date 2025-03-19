@@ -378,11 +378,13 @@ if (isset($_POST['submit'])) {
                     if ($sortednk[$key]['policy'] != '') {
                         $policyProblem = "**WRONG ITEM POLICY: " . $sortednk[$key]['policy'] . "**<BR>";
                         $policyProblemCount += 1;
-                    } else {
-                        $policyProblem = "**BLANK I POLICY**<BR>";
-                        $policyProblemCount += 1;
+                        $problem = true;
                     }
-                    $problem = true;
+                    // else {
+                    //     $policyProblem = "**BLANK I POLICY**<BR>";
+                    //     $policyProblemCount += 1;
+                    //     $problem = true;
+                    // }
                 } else {
                     $policyProblem = '';
                 }
