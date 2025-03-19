@@ -187,14 +187,10 @@ if (isset($_POST['submit'])) {
                 else {  
                   //Barcode was found so we can store a normalized call number to use for sorting
                   
-                  //Need to remove "DVD " prefix prior to sorting if DVD
+                  //Need to remove "DVD "/"VIDEO " prefixes prior to sorting if DVD
                   if (isset($_POST['itemType']) && $_POST['itemType'] == 'DVD') {  
-                    // Remove any inital "DVD " prior to sorting
+                    // Remove any inital "DVD " or "VIDEO  prior to sorting
                     $itemData->call_number = preg_replace("/^DVD\s*/", "", $itemData->call_number);
-                  }
-                  //Need to remove "VIDEO " prefix prior to sorting if DVD
-                  if (isset($_POST['itemType']) && $_POST['itemType'] == 'VIDEO') {  
-                    // Remove any inital "VIDEO " prior to sorting
                     $itemData->call_number = preg_replace("/^VIDEO\s*/", "", $itemData->call_number);
                   }
 
